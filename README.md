@@ -125,10 +125,10 @@ Or install it yourself as:
 ```
 
 ###### Standard call
-ruby aslate.rb -c <config_file> 
+> ```ruby aslate.rb -c <config_file> ```
 
 ###### Dry-Run (Will not save timecard entry)
-ruby aslate.rb -c <config_file> --dry-run
+> ```ruby aslate.rb -c <config_file> --dry-run```
 
 ## Development
 
