@@ -39,8 +39,7 @@ Automation tool for timecard processing for the Intuit QuickBooks Time software 
 * Select a Project
     - First project entry
     ```
-    <div id="weekly_timecard_row_name_0" class="job-code-cell onboarding-tour-element select-job-code-button" title="(no project)" style="max-width: 200px;" tabindex="0" role="button" onkeydown="accessibilityHandlers.clickButton(event)" onclick="el('weekly_timecard').show_jc_dropdown('0', event);"> (no project)
-</div>
+    <div id="weekly_timecard_row_name_0" class="job-code-cell onboarding-tour-element select-job-code-button" title="(no project)" style="max-width: 200px;" tabindex="0" role="button" onkeydown="accessibilityHandlers.clickButton(event)" onclick="el('weekly_timecard').show_jc_dropdown('0', event);"> (no project)</div>
     ```
     - Iterates in the leftmost column starting with "weekly_timecard_row_name_0" and incrementing
     every row down 
@@ -94,7 +93,42 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+* Configuration Structure
+```
+{
+    "email": "<email>",
+    "projects": {
+        "Project_Name_0: {
+            "Monday": <#Hours>,
+            "Tuesday": <#Hours>,
+            "Wednesday": <#Hours>,
+            "Thursday": <#Hours>,
+            "Friday": <#Hours>,
+        },
+        "Project_Name_1: {
+            "Monday": <#Hours>,
+            "Tuesday": <#Hours>,
+            "Wednesday": <#Hours>,
+            "Thursday": <#Hours>,
+            "Friday": <#Hours>,
+        },
+        ...
+        "Project_Name_N: {
+            "Monday": <#Hours>,
+            "Tuesday": <#Hours>,
+            "Wednesday": <#Hours>,
+            "Thursday": <#Hours>,
+            "Friday": <#Hours>,
+        }
+    }
+}
+```
+
+###### Standard call
+ruby aslate.rb -c <config_file> 
+
+###### Dry-Run (Will not save timecard entry)
+ruby aslate.rb -c <config_file> --dry-run
 
 ## Development
 
